@@ -13,10 +13,10 @@ export default function HomePage() {
   console.log(selectedUser);
   return (
     <div className="border w-full h-screen sm:px-[15%] sm:py-[5%]">
-      <div className={`border-2 border-gray-500 rounded-2xl overflow-hidden h-[100%] relative backdrop-blur-xl grid grid-cols-1 ${selectedUser ? 'grid-cols-3' : 'grid-cols-2'}`}>
-        <LeftSidebar />
-        <ChatPanel />
-        <RightSidebar />
+      <div className={`border-2 border-gray-500 rounded-2xl overflow-hidden h-[100%] relative backdrop-blur-xl grid grid-cols-1 ${selectedUser ? 'grid-cols-[1fr_2fr_1fr]' : 'grid-cols-2'}`}>
+        <LeftSidebar selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
+        <ChatPanel selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
+        <RightSidebar selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
       </div>
     </div>
   )
